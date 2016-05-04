@@ -43,7 +43,12 @@ set(VERSION_MINOR 3)
 set(VERSION_PATCH 2)
 
 # add the SFML header path
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+if(${APPLE})
+	include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include ${HOME}/homebrew/include/freetype2/)
+else()
+	include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+endif()
 
 # add an option for choosing the build type (shared or static)
 if(NOT (SFML_OS_IOS OR SFML_OS_ANDROID))
