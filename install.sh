@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	cmake -DCMAKE_BUILD_TYPE=Release && make
